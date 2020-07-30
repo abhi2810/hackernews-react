@@ -8,7 +8,6 @@ export default function Header() {
   let [selected, setSelected] = React.useState("");
 
   React.useEffect(() => {
-    console.log(location.pathname);
     switch (location.pathname) {
       case "/post/top":
         setSelected("top");
@@ -20,6 +19,9 @@ export default function Header() {
         setSelected("");
     }
   }, [location]);
+
+  let getMenuActive = (menuitem) =>
+    clsx("nav-link", selected === menuitem && "active");
 
   return (
     <Navbar bg="dark" variant="dark">
@@ -36,26 +38,17 @@ export default function Header() {
       <Navbar.Collapse className="justify-content-end">
         <Nav activeKey="/home">
           <Nav.Item>
-            <Link
-              className={clsx("nav-link", selected === "" && "active")}
-              to="/"
-            >
+            <Link className={getMenuActive("")} to="/">
               Home
             </Link>
           </Nav.Item>
           <Nav.Item>
-            <Link
-              className={clsx("nav-link", selected === "top" && "active")}
-              to="/post/top"
-            >
+            <Link className={getMenuActive("top")} to="/post/top">
               Top
             </Link>
           </Nav.Item>
           <Nav.Item>
-            <Link
-              className={clsx("nav-link", selected === "new" && "active")}
-              to="/post/new"
-            >
+            <Link className={getMenuActive("new")} to="/post/new">
               New
             </Link>
           </Nav.Item>
