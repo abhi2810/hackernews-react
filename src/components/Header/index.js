@@ -24,7 +24,7 @@ export default function Header() {
     clsx("nav-link", selected === menuitem && "active");
 
   return (
-    <Navbar bg="dark" variant="dark">
+    <Navbar bg="dark" variant="dark" sticky="top">
       <Navbar.Brand href="/">
         <img
           alt=""

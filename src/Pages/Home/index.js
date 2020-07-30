@@ -2,9 +2,11 @@ import React from "react";
 import { Jumbotron } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
+import "./Home.css";
+
 export default function Home() {
   return (
-    <Jumbotron>
+    <Jumbotron className="home">
       <h1>Hacker News</h1>
       <p>
         This is the React port of basic features from{" "}

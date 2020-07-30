@@ -1,5 +1,4 @@
 import React from "react";
-import "./App.css";
 import Home from "./Pages/Home";
 import Post from "./Pages/Post";
 import Comment from "./Pages/Comment";
@@ -8,7 +7,7 @@ import { Switch, Route, BrowserRouter } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <BrowserRouter>
         <Header />
         <Switch>
