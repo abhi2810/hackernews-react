@@ -1,0 +1,7 @@
+.comment-item {
+  margin: 1em;
+}
+
+.comment-title:hover {
+  text-decoration: none;
+}

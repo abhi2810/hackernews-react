@@ -14,7 +14,7 @@ function App() {
           <Route path="/post">
             <Post />
           </Route>
-          <Route path="/comment">
+          <Route path="/comment/:id">
             <Comment />
           </Route>
           <Route path="/">

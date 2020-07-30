@@ -50,7 +50,7 @@ export default function Post() {
           {posts?.map((res, idx) =>
             res.data ? (
               <li key={idx}>
-                <PostTile data={res.data} />
+                <PostTile data={res.data} postPage={true} />
               </li>
             ) : null
           )}

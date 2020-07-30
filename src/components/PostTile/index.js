@@ -1,28 +1,41 @@
 import React from "react";
-import { Card, Button, Badge } from "react-bootstrap";
+import { Card, Badge } from "react-bootstrap";
 import moment from "moment";
 
 import "./PostTile.css";
+import { Link } from "react-router-dom";
 
-export default function PostTile({ data }) {
-  console.log(data);
+export default function PostTile({ data, postPage }) {
   return (
     <Card className="post-item">
       <Card.Header as="h5">
-        <a className="post-title" target="_blank" rel="noopener noreferrer" href={data.url}>
-          {data.title}
+        <a
+          className="post-title"
+          target="_blank"
+          rel="noopener noreferrer"
+          href={data.url}
+        >
+          {data.title || data.text}
         </a>
       </Card.Header>
       <Card.Body>
         <Card.Text>
-          <Badge variant="success">{data.score}</Badge> Points <br />
+          {data.title ? (
+            <>
+              <Badge variant="success">{data.score}</Badge> Points <br />
+            </>
+          ) : null}
           {moment.unix(data.time).fromNow() + " | "}
           by {data.by} {" | "}
           <a target="_blank" rel="noopener noreferrer" href={data.url}>
             {data.url?.split("/")[2]}
           </a>
         </Card.Text>
-        <Button variant="primary">Comments</Button>
+        {postPage ? (
+          <Link className="btn btn-primary" to={`/comment/${data.id}`}>
+            Comments
+          </Link>
+        ) : null}
       </Card.Body>
     </Card>
   );
