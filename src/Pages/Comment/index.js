@@ -47,7 +47,7 @@ export default function Comment() {
           <PostTile data={post} postPage={false} />
           <ul className="center">
             {comments?.map((res, idx) =>
-              res.data ? (
+              res.data && res.data.by ? (
                 <li key={idx}>
                   <CommentTile data={res.data} />
                 </li>

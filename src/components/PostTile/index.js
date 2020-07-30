@@ -1,6 +1,7 @@
 import React from "react";
 import { Card, Badge } from "react-bootstrap";
 import moment from "moment";
+import parse from "html-react-parser";
 
 import "./PostTile.css";
 import { Link } from "react-router-dom";
@@ -15,7 +16,7 @@ export default function PostTile({ data, postPage }) {
           rel="noopener noreferrer"
           href={data.url}
         >
-          {data.title || data.text}
+          {parse(data.title || data.text)}
         </a>
       </Card.Header>
       <Card.Body>
@@ -31,7 +32,7 @@ export default function PostTile({ data, postPage }) {
             {data.url?.split("/")[2]}
           </a>
         </Card.Text>
-        {postPage ? (
+        {postPage && data.kids ? (
           <Link className="btn btn-primary" to={`/comment/${data.id}`}>
             Comments
           </Link>
