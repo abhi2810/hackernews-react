@@ -23,7 +23,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "snapshot": "percy exec -- node snapshots.js"
+    "snapshot": "percy exec -- node snapshot.js"
   },
   "eslintConfig": {
     "extends": "react-app"
