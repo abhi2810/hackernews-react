@@ -17,7 +17,7 @@ export default function Home() {
         more details.
       </p>
       <p>
-        <Link className="btn btn-primary" to="/post/top">
+        <Link className="btn btn-primary btn-home" to="/post/top">
           Top Posts
         </Link>
       </p>
